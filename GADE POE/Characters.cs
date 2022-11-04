@@ -72,6 +72,7 @@ namespace GADEpart1
 
         public void PickUp(Item ItemPickup)
         {
+
             if (ItemPickup.Symbol == TileType.Gold)
             {
                 GoldStored += ItemPickup.GoldAmount;

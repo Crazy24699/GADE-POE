@@ -97,7 +97,7 @@ namespace GADEpart1
         public Map(int MaxHeight, int MaxWidth, int MinWidth, int MinHight, int EnemyCountRef, int TotalGoldPiles)
         {
             yAxis = Rnd.Next(MinHight, MaxHeight);
-            xAxis = Rnd.Next(MinWidth, MaxHeight);
+            xAxis = Rnd.Next(MinWidth, MaxWidth);
             MapGrid = new Tile[yAxis, xAxis];
 
             TotalEnemyCount = EnemyCountRef;
@@ -143,6 +143,12 @@ namespace GADEpart1
                 }
 
             }
+
+            for (GoldNum = 0; GoldNum < TotalGold; GoldNum++)
+            {
+                TileCreate(Tile.TileType.Gold);
+            }
+
             TileCreate(Tile.TileType.Hero);
             UpdateVision();
         }
@@ -174,7 +180,7 @@ namespace GADEpart1
         {
             Item ItemAtPosition;
 
-            for (int ItemList = 0; ItemList < Items.Length;)
+            for (int ItemList = 0; ItemList < Items.Length; ItemList++)
             {
                 if (Items[ItemList] != null)
                 {
@@ -189,7 +195,7 @@ namespace GADEpart1
                 }
 
 
-                ItemList++;
+                
             }
 
             return null;

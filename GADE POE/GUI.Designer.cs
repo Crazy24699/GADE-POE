@@ -144,10 +144,10 @@
             // MapInterface
             // 
             this.MapInterface.AutoSize = true;
-            this.MapInterface.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MapInterface.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MapInterface.Location = new System.Drawing.Point(70, 71);
             this.MapInterface.Name = "MapInterface";
-            this.MapInterface.Size = new System.Drawing.Size(82, 24);
+            this.MapInterface.Size = new System.Drawing.Size(104, 32);
             this.MapInterface.TabIndex = 9;
             this.MapInterface.Text = "label1";
             // 

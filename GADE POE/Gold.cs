@@ -12,22 +12,22 @@ namespace GADE_POE
     {
         private Random Rnd = new Random();
 
-        public int ReturnGold()
-        {
-            return GoldAmount;
-        }
+        //public int ReturnGold()
+        //{
+        //    return GoldAmount;
+        //}
 
         //used for loading from the save file 
-        public Gold(int XPosition, int YPosition, int GoldAmountSaved) : base(XPosition, YPosition)
-        {
-            GoldAmount = Rnd.Next(1, 6);
-            Symbol = TileType.Gold;
-        }
+        //public Gold(int XPosition, int YPosition, int GoldAmountSaved) : base(XPosition, YPosition)
+        //{
+        //    GoldAmount = Rnd.Next(1, 6);
+        //    Symbol = TileType.Gold;
+        //}
 
 
         public Gold(int XPosition, int YPosition) : base(XPosition, YPosition)
         {
-            GoldAmount = GoldAmount;
+            GoldAmount = Rnd.Next(1, 6);
             Symbol = TileType.Gold;
         }
 
