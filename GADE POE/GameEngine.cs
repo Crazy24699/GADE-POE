@@ -14,19 +14,6 @@ namespace GADE_POE
     public class GameEngine
     {
 
-        //private Gold[] GoldObject;
-        //public Gold[] GoldRef
-        //{
-        //    get { return GoldObject; }
-        //    set { GoldObject = value; }
-        //}
-        //public int MapHeight;
-        //public int MapWidth;
-        //public int EnemyCount;
-        //public int HP;
-        //public int HeroXCord;
-        //public int HeroYCord;
-
 
         private Map MapRef;
         public Map Map
@@ -36,59 +23,12 @@ namespace GADE_POE
         }
 
 
-        //public Enemy[] enemies;
-        //public Enemy[] Enemies
-        //{
-        //    get
-        //    {
-        //        return enemies;
-        //    }
-        //    set
-        //    {
-        //        enemies = value;
-        //    }
-        //}
 
         public static Tile.TileType Symbol;
-
-        //public bool UpInput = true, DownInput = true, LeftInput = true, RightInput = true;
-        //public bool CanMove = true;        //If the player is able to move, if there arent any obstacles in the way. 
-
-
-
-        //public SwampCreature SwampCreatureRef = new SwampCreature(0, 0, 0);
-        //public Mage MageRef = new Mage(0, 0, 0);
-
         int i = 0;
         public GameEngine()
         {
             Map = new Map(10, 16, 12, 6, 4, 3);
-        }
-
-
-        public void RandomizeGold()
-        {
-            //GoldRef = new Gold[5];
-            //for (; i < 5;)
-            //{
-            //    //the random gold values
-            //    Random GldRnd = new Random();
-            //    Random GoldX = new Random();
-            //    Random GoldY = new Random();
-            //    int X = GoldX.Next(3, 10);
-            //    int Y = GoldY.Next(3, 6);
-
-
-            //    //GoldRef[i] = new Gold(Y, ,5X);
-            //    //GoldRef[i].Xposition = X;
-            //    //GoldRef[i].Yposition = Y;
-            //    //MapGrid[Y, X] = "G";
-
-
-            //    i++;
-
-            //}
-
         }
 
         //Checks the players state, namely if they are alive or dead 
