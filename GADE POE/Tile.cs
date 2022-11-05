@@ -22,6 +22,7 @@ namespace GADEpart1
             Mage = 'M',
             EmptyTile = 'o',
             Obstacle = 'X',
+            Leader = 'L'
         }
 
         public int XValue
@@ -68,6 +69,8 @@ namespace GADEpart1
             YValue = y;
 
         }
+
+       
     }
 
     public class Obstacle : Tile
