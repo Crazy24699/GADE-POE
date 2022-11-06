@@ -14,6 +14,7 @@ namespace GADE_POE
     public class GameEngine
     {
 
+        Shop shop = new Shop();
 
         private Map MapRef;
         public Map Map
@@ -171,6 +172,7 @@ namespace GADE_POE
             string previousMap = br.ReadInt32() + ":" + br.ReadInt32();
             Console.WriteLine(previousMap);
         }
+
 
     }
 }

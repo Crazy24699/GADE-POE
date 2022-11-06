@@ -7,7 +7,7 @@ using GADEpart1;
 
 namespace GADE_POE
 {
-    internal class Leader : Enemy
+    internal class Leader : Enemy 
     {
         private TileType LeaderTarget { get; set; }
         public Leader(int x, int y, int EnemyArray) : base(x, y, EnemyArray)
@@ -18,7 +18,7 @@ namespace GADE_POE
             EnemyType = TileType.Leader;
             Symbol = TileType.Leader;
         }
-
+        // the leader needs to target the hero and follow them.
         
     }
 }
