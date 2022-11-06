@@ -18,7 +18,12 @@ namespace GADE_POE
             EnemyType = TileType.Leader;
             Symbol = TileType.Leader;
         }
+
+        public override Movements ReturnMove(Movements move = Movements.NoMovement)
+        {
+            throw new NotImplementedException();
+        }
         // the leader needs to target the hero and follow them.
-        
+
     }
 }
