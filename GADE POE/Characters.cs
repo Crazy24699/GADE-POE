@@ -18,6 +18,7 @@ namespace GADEpart1
 
         protected int HP { get; set; }
         protected int TotalHP { get; set; }
+
         public int CurrentHP
         {
             get { return HP; }
@@ -33,6 +34,7 @@ namespace GADEpart1
 
         public int GoldStored { get; set; }
 
+        
 
 
 

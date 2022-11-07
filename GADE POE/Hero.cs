@@ -17,8 +17,11 @@ namespace GADEpart1
             MaxHP = 10;
             HP = MaxHP;
             Symbol = TileType.Hero;
+            
 
         }
+
+       
 
         public bool OnGoldTile { get; set; } = false;
 
@@ -40,7 +43,7 @@ namespace GADEpart1
 
         public override string ToString()
         {
-            return "PlayerStats:    \nHP:" + HP + "\nDamage:" + Damage + "\n [" + x + "," + y + "]";
+            return "PlayerStats:    \nHP:" + HP + "\nCurrent Weapon" + "\nWeapon Range" + "\nWeapon Damage:" + Damage +"\nGold" + GoldStored +"\n [" + x + "," + y + "]";
         }
 
     }
