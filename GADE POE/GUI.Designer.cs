@@ -43,9 +43,10 @@
             // 
             // Up
             // 
-            this.Up.Location = new System.Drawing.Point(592, 135);
+            this.Up.Location = new System.Drawing.Point(677, 180);
+            this.Up.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Up.Name = "Up";
-            this.Up.Size = new System.Drawing.Size(81, 39);
+            this.Up.Size = new System.Drawing.Size(93, 52);
             this.Up.TabIndex = 1;
             this.Up.Text = "Up";
             this.Up.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // 
             // Left
             // 
-            this.Left.Location = new System.Drawing.Point(507, 183);
+            this.Left.Location = new System.Drawing.Point(579, 244);
+            this.Left.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Left.Name = "Left";
-            this.Left.Size = new System.Drawing.Size(81, 39);
+            this.Left.Size = new System.Drawing.Size(93, 52);
             this.Left.TabIndex = 1;
             this.Left.Text = "Left";
             this.Left.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // 
             // Down
             // 
-            this.Down.Location = new System.Drawing.Point(592, 183);
+            this.Down.Location = new System.Drawing.Point(677, 244);
+            this.Down.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Down.Name = "Down";
-            this.Down.Size = new System.Drawing.Size(81, 39);
+            this.Down.Size = new System.Drawing.Size(93, 52);
             this.Down.TabIndex = 1;
             this.Down.Text = "Down";
             this.Down.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // 
             // Right
             // 
-            this.Right.Location = new System.Drawing.Point(679, 183);
+            this.Right.Location = new System.Drawing.Point(776, 244);
+            this.Right.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Right.Name = "Right";
-            this.Right.Size = new System.Drawing.Size(81, 39);
+            this.Right.Size = new System.Drawing.Size(93, 52);
             this.Right.TabIndex = 1;
             this.Right.Text = "RIght";
             this.Right.UseVisualStyleBackColor = true;
@@ -83,10 +87,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(438, 11);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Location = new System.Drawing.Point(501, 15);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(83, 29);
+            this.btnSave.Size = new System.Drawing.Size(95, 39);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -94,10 +97,9 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(679, 53);
-            this.btnAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAttack.Location = new System.Drawing.Point(776, 71);
             this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(97, 59);
+            this.btnAttack.Size = new System.Drawing.Size(111, 79);
             this.btnAttack.TabIndex = 3;
             this.btnAttack.Text = "Attack";
             this.btnAttack.UseVisualStyleBackColor = true;
@@ -105,10 +107,9 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(438, 53);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLoad.Location = new System.Drawing.Point(501, 71);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(80, 26);
+            this.btnLoad.Size = new System.Drawing.Size(91, 35);
             this.btnLoad.TabIndex = 5;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
@@ -117,27 +118,28 @@
             // HeroStats
             // 
             this.HeroStats.AutoSize = true;
-            this.HeroStats.Location = new System.Drawing.Point(633, 285);
+            this.HeroStats.Location = new System.Drawing.Point(723, 380);
             this.HeroStats.Name = "HeroStats";
-            this.HeroStats.Size = new System.Drawing.Size(38, 15);
+            this.HeroStats.Size = new System.Drawing.Size(50, 20);
             this.HeroStats.TabIndex = 6;
             this.HeroStats.Text = "label2";
             // 
             // EnemyList
             // 
             this.EnemyList.FormattingEnabled = true;
-            this.EnemyList.ItemHeight = 15;
-            this.EnemyList.Location = new System.Drawing.Point(633, 413);
+            this.EnemyList.ItemHeight = 20;
+            this.EnemyList.Location = new System.Drawing.Point(609, 551);
+            this.EnemyList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EnemyList.Name = "EnemyList";
-            this.EnemyList.Size = new System.Drawing.Size(184, 124);
+            this.EnemyList.Size = new System.Drawing.Size(324, 164);
             this.EnemyList.TabIndex = 7;
             // 
             // AttackCheck
             // 
             this.AttackCheck.AutoSize = true;
-            this.AttackCheck.Location = new System.Drawing.Point(464, 385);
+            this.AttackCheck.Location = new System.Drawing.Point(530, 513);
             this.AttackCheck.Name = "AttackCheck";
-            this.AttackCheck.Size = new System.Drawing.Size(38, 15);
+            this.AttackCheck.Size = new System.Drawing.Size(50, 20);
             this.AttackCheck.TabIndex = 8;
             this.AttackCheck.Text = "label1";
             // 
@@ -145,17 +147,17 @@
             // 
             this.MapInterface.AutoSize = true;
             this.MapInterface.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MapInterface.Location = new System.Drawing.Point(70, 71);
+            this.MapInterface.Location = new System.Drawing.Point(80, 95);
             this.MapInterface.Name = "MapInterface";
-            this.MapInterface.Size = new System.Drawing.Size(104, 32);
+            this.MapInterface.Size = new System.Drawing.Size(131, 40);
             this.MapInterface.TabIndex = 9;
             this.MapInterface.Text = "label1";
             // 
             // GUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 549);
+            this.ClientSize = new System.Drawing.Size(960, 732);
             this.Controls.Add(this.MapInterface);
             this.Controls.Add(this.AttackCheck);
             this.Controls.Add(this.EnemyList);
@@ -167,6 +169,7 @@
             this.Controls.Add(this.Down);
             this.Controls.Add(this.Left);
             this.Controls.Add(this.Up);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GUI";
             this.Text = "GUI";
             this.Load += new System.EventHandler(this.GUI_Load);

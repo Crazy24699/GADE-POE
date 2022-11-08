@@ -22,7 +22,9 @@ namespace GADEpart1
 
         public override string ToString()
         {
-            return EnemyType + " at " + "[" + x.ToString() + "," + y.ToString() + "]" + " " + Damage.ToString();
+            return EnemyType + "(" + CurrentHP + "/" + MaxHP + " HP" + ")" + " at " + "[" + x.ToString() + "," + y.ToString() + "]" + " " + "(" + Damage.ToString() + " DMG" + ")";
+
+            
         }
     }
 }
