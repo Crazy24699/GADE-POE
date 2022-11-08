@@ -15,6 +15,9 @@ namespace GADEpart1
 
         public TileType EnemyType { get; set; }
 
+        //public int EnemyGold { get; set; }
+
+
         public Enemy(int x, int y, int EnemyArrayValue) : base(x, y)
         {
             EnemyArray = EnemyArrayValue;

@@ -34,6 +34,8 @@ namespace GADEpart1
 
         public int GoldStored { get; set; }
 
+        
+
        
 
 
@@ -80,6 +82,19 @@ namespace GADEpart1
                 GoldStored += ItemPickup.GoldAmount;
             }
         }
+        //loot function
+        /*public void Loot(Characters target, Hero Hero, Enemy Enemy)
+        {
+            if (Hero.CurrentHP == 0)
+            {
+                Hero.GoldStored = 0;   
+            }
+
+            if (Enemy.HP == 0)
+            {
+                Enemy.Gold = 0;
+            }
+        }*/
 
         public void Move(Movements move, Tile TileEntity)
         {
