@@ -38,6 +38,12 @@ namespace GADE_POE
             get { return WeaponType; }
             set { WeaponType = value; }
         }
+
+        public string CurrectWeapon
+        {
+            get { return CurrectWeapon; }
+            set { CurrectWeapon = value; }
+        }
         public Weapon(int XPosition,int YPosition) : base(XPosition,YPosition)
         {
 

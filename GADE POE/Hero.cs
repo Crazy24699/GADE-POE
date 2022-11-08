@@ -44,7 +44,9 @@ namespace GADEpart1
         public override string ToString()
         {
             // not sure how to actually get the weapon info to show up.
-            return "PlayerStats:    \nHP:" + HP + "\nCurrent Weapon" + "\nWeapon Range" + "\nWeapon Damage:" + Damage +"\nGold" + GoldStored +"\n [" + x + "," + y + "]";
+            // if the hero has a weapon the durability must be shown as well.
+
+            return "PlayerStats:    \nHP:" + HP + "\nCurrent Weapon" + "\nWeapon Range" + "\nWeapon Damage:" + Damage + "\nDurability:" +"\nGold" + GoldStored +"\n [" + x + "," + y + "]";
         }
 
     }

@@ -34,7 +34,7 @@ namespace GADEpart1
 
         public int GoldStored { get; set; }
 
-        
+       
 
 
 

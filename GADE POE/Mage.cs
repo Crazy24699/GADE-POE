@@ -15,10 +15,12 @@ namespace GADE_POE
         {
             MaxHP = 5;
             HP = MaxHP;
+            Damage = 5;
             EnemyType = TileType.Mage;
             Symbol = TileType.Mage;
         }
 
+        
 
         public override Movements ReturnMove(Movements Move = 0)
         {

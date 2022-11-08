@@ -22,6 +22,8 @@ namespace GADEpart1
 
         public override string ToString()
         {
+            // not sure how to get the enemy weapon so show as well
+            // enemies spawn with specific weapons and can pick up new ones at they move. the mage has no weapons and uses fists.
             return EnemyType + "(" + CurrentHP + "/" + MaxHP + " HP" + ")" + " at " + "[" + x.ToString() + "," + y.ToString() + "]" + " " + "(" + Damage.ToString() + " DMG" + ")";
 
             
