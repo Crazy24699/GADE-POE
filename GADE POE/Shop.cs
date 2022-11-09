@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_POE
 {
-    internal class Shop
+    public class Shop
     {
 
     }
