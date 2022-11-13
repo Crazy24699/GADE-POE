@@ -19,6 +19,8 @@ namespace GADE_POE
             Symbol = TileType.Leader;
         }
 
+        
+
         public override Movements ReturnMove(Movements move = Movements.NoMovement)
         {
             throw new NotImplementedException();

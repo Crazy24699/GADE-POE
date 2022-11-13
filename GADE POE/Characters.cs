@@ -31,6 +31,8 @@ namespace GADEpart1
         }
         protected int Damage { get; set; }
         public int TargetDistance = 0;
+        public int XDistance = 0;
+        protected int YDistance = 0;
 
         public int GoldStored { get; set; }
 
@@ -66,6 +68,9 @@ namespace GADEpart1
         {
 
             TargetDistance = Math.Abs((target.x - XValue) + (target.y - YValue));
+            XDistance = Math.Abs(target.x - XValue);
+            YDistance = Math.Abs(target.y - YValue);
+
             return TargetDistance;
         }
 

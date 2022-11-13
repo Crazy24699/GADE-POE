@@ -14,7 +14,7 @@ namespace GADE_POE
     public class GameEngine
     {
 
-        Shop shop = new Shop();
+
 
         private Map MapRef;
         public Map Map
@@ -23,7 +23,11 @@ namespace GADE_POE
             set { MapRef= value; }
         }
 
-
+        private Shop ShopRef;
+        public Shop Shop
+        {
+            get { return ShopRef; }
+        }
 
         public static Tile.TileType Symbol;
         int i = 0;
