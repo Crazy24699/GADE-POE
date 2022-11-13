@@ -56,7 +56,18 @@ namespace GADE_POE
         public bool CanBuy(int Num)
         {
 
-            return true;
+            return Character.GoldStored > Num;
+        }
+
+        public void Buy(int num)
+        {
+
+                    //checks if the target thats buying the item has enough money to buy the item from them 
+            if (CanBuy(num))
+            {   
+                    //the if target thats buying does have enough money then it decreases the amount
+                Character.GoldStored -= num;
+            }
         }
 
         
