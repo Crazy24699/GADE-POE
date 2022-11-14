@@ -32,12 +32,22 @@ namespace GADE_POE
             get { return Cost; }
             set { Cost = value; }
         }
-        protected string WeaponType;
-        public string WeaponName
+        public enum Type
         {
-            get { return WeaponType; }
-            set { WeaponType = value; }
+            Dagger,
+            Longsword,
+            Longbow,
+            Rifle
         }
+        public Type WeaponType
+        {
+            get;
+            set;
+        }
+        
+          
+        
+
 
         public string CurrectWeapon
         {

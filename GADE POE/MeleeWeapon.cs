@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GADE_POE
 {
@@ -14,16 +15,18 @@ namespace GADE_POE
             LongSword
         }
 
-        public MeleeWeapon(int XPosition, int YPosition, Types Weapons) : base(XPosition, YPosition)
+        public MeleeWeapon(int XPosition, int YPosition, Types MeleeTypes) : base(XPosition, YPosition)
         {
-            if(Weapons == Types.Dagger)
+            if(MeleeTypes == Types.Dagger)
             {
                 WeaponDurability = 10;
                 WeaponDamage = 3;
                 WeaponCost = 3;
+                MessageBox.Show("Dagger");
             }
-            if(Weapons == Types.LongSword)
+            if(MeleeTypes == Types.LongSword)
             {
+                MessageBox.Show("Long");
                 WeaponDurability = 6;
                 WeaponDamage = 4;
                 WeaponCost = 5;

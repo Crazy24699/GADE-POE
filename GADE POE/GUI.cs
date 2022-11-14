@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,7 @@ namespace GADE_POE
         {
             GameEngine = new GameEngine();
             UpdateView();
+            
         }
 
         private void Map_TextChanged(object sender, EventArgs e)
@@ -85,6 +87,39 @@ namespace GADE_POE
         private void btnSave_Click(object sender, EventArgs e)
         {
             GameEngine.Save();
+        }
+
+        private void Slot1_Click(object sender, EventArgs e)
+        {
+
+            BuyingItems(1);
+        }
+
+        //buying item method
+        public void BuyingItems(int Slot)
+        {
+            DialogResult ChosenOption = MessageBox.Show("Confrim Purchase", "Do you want to buy " + "ITEM " + " for " + "GOLD AMMOUNT",MessageBoxButtons.YesNo);
+            
+            if (ChosenOption == DialogResult.Yes)
+            {
+                GameEngine.BuyItem(Slot);
+
+
+            }
+            else if(ChosenOption == DialogResult.No)
+            {
+                
+            }
+        }
+
+        private void Slot2_Click(object sender, EventArgs e)
+        {
+            BuyingItems(2);
+        }
+
+        private void slot3_Click(object sender, EventArgs e)
+        {
+            BuyingItems(3);
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

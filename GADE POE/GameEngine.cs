@@ -29,6 +29,13 @@ namespace GADE_POE
             get { return ShopRef; }
         }
 
+        private Hero HeroRef;
+        public Hero Hero
+        {
+            get { return HeroRef; }
+            set { HeroRef= value; }
+        }
+
         public static Tile.TileType Symbol;
         int i = 0;
         public GameEngine()
@@ -44,6 +51,25 @@ namespace GADE_POE
             {
                 Map.MapGrid[Hero.YValue, Hero.XValue] = new EmptyTIle(Hero.YValue, Hero.XValue);
             }
+        }
+
+        public void BuyItem(int Slot)
+        {
+            Shop shop = new Shop(Hero);
+            
+            //Check funds and if the buyer has enough then the item is transfered
+            //switch (Shop.Weapons[Slot].CurrectWeapon)
+            //{
+            //    case "Dagger":
+            //        Shop.Buy(Shop.Weapons[Slot].WeaponCost, Slot);
+            //        MessageBox.Show(Shop.Weapons[Slot].WeaponCost.ToString());
+            //        break;
+            //    case "LongSword":
+            //        Shop.Buy(Shop.Weapons[Slot].WeaponCost, Slot);
+            //        break;
+            //}
+
+
         }
 
         public void CheckEnemyState(Enemy Enemy)
