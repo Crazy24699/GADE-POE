@@ -25,26 +25,28 @@ namespace GADE_POE
             }
         }
 
-        private Weapon RandomWeapon(Weapon ChosenWeapon)
+        private Weapon RandomWeapon()
         {
             int RandomWeapon = 0;
             RandomWeapon = Rnd.Next(0, 4);
+            
 
 
                     //picks a random weapon based on the random variable it generated at the beggining of the code
             switch (RandomWeapon)
             {
                 case 1:
-                    ChosenWeapon.CurrectWeapon = "Dagger";
+                    Weapons[1].CurrectWeapon = "Dagger";
+                    //ChosenWeapon.CurrectWeapon = "Dagger";
                     break;
                 case 2:
-                    ChosenWeapon.CurrectWeapon = "Longsword";
+                    //ChosenWeapon.CurrectWeapon = "Longsword";
                     break;
                 case 3:
-                    ChosenWeapon.CurrectWeapon = "Longbow";
+                    //ChosenWeapon.CurrectWeapon = "Longbow";
                     break;
                 case 4:
-                    ChosenWeapon.CurrectWeapon = "Rifle";
+                    //ChosenWeapon.CurrectWeapon = "Rifle";
                     break;
             }
 
@@ -62,11 +64,12 @@ namespace GADE_POE
         public void Buy(int num)
         {
 
-                    //checks if the target thats buying the item has enough money to buy the item from them 
-            if (CanBuy(num))
-            {   
-                    //the if target thats buying does have enough money then it decreases the amount
+            //checks if the target thats buying the item has enough money to buy the item from them 
+            if (CanBuy(num)) 
+            {
+                //the if target thats buying does have enough money then it decreases the amount
                 Character.GoldStored -= num;
+                RandomWeapon()
             }
         }
 
