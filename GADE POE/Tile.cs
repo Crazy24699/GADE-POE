@@ -18,7 +18,7 @@ namespace GADEpart1
             Hero = 'H',
             SwampCreature = 'C',
             Weapon = 'W',
-            //Gold = 'G',
+            Gold = 'G',
             //Dagger = 'D',
             //LongSword = '$',
             //LongBow = 'B',
