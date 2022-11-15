@@ -53,9 +53,7 @@ namespace GADE_POE
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(GameEngine.Map.xAxis.ToString(), GameEngine.Map.yAxis.ToString());
-
-
+            MessageBox.Show(GameEngine.Map.xAxis.ToString(), GameEngine.Map.yAxis.ToString());
         }
 
 
