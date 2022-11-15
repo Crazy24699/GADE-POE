@@ -52,13 +52,8 @@ namespace GADEpart1
             Right,
         }
         public Tile[] CharacterView { get; set; } = new Tile[5];
-        public bool Dead(Characters Target)
+        public bool Dead()
         {
-            if (Target.HP == 0)
-            {
-                GoldStored = Target.GoldStored + GoldStored;
-            }
-
             return CurrentHP <= 0;
         }
 
@@ -93,18 +88,13 @@ namespace GADEpart1
             }
         }
         //loot function
-        /*public void Loot(Characters target, Hero Hero, Enemy Enemy)
+        public void Loot(Characters Target)
         {
-            if (Hero.CurrentHP == 0)
+            if (Target.HP == 0)
             {
-                Hero.GoldStored = 0;   
+                GoldStored = Target.GoldStored + GoldStored;
             }
-
-            if (Enemy.HP == 0)
-            {
-                Enemy.Gold = 0;
-            }
-        }*/
+        }
 
         public void Move(Movements move, Tile TileEntity)
         {
