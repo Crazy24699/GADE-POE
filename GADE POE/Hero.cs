@@ -40,12 +40,7 @@ namespace GADEpart1
                 return move;
             }
 
-            // I am well aware that this next part of code will look like a disaster but i'm just seeing if it will work
-
-            /*else if (CharacterView[(int)move].Symbol == TileType.LongSword)
-            {
-
-            }*/
+            
             return Movements.NoMovement;
         }
 

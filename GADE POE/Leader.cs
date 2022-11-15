@@ -39,6 +39,10 @@ namespace GADE_POE
                 {
                     return Move;
                 }
+                if (CharacterView[(int)Move].Symbol == TileType.Hero)
+                {
+                    
+                }
             }
             return Movements.NoMovement;
             // the leader needs to target the hero and follow them.
