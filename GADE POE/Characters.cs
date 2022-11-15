@@ -31,6 +31,8 @@ namespace GADEpart1
         }
         protected int Damage { get; set; }
         public int TargetDistance = 0;
+        public int XDistance = 0;
+        protected int YDistance = 0;
 
         public int GoldStored { get; set; }
 
@@ -62,6 +64,9 @@ namespace GADEpart1
         {
 
             TargetDistance = Math.Abs((target.x - XValue) + (target.y - YValue));
+            XDistance = Math.Abs(target.x - XValue);
+            YDistance = Math.Abs(target.y - YValue);
+
             return TargetDistance;
         }
 
@@ -81,18 +86,13 @@ namespace GADEpart1
             
         }
         //loot function
-        /*public void Loot(Characters target, Hero Hero, Enemy Enemy)
+        public void Loot(Characters Target)
         {
-            if (Hero.CurrentHP == 0)
+            if (Target.HP == 0)
             {
-                Hero.GoldStored = 0;   
+                GoldStored = Target.GoldStored + GoldStored;
             }
-
-            if (Enemy.HP == 0)
-            {
-                Enemy.Gold = 0;
-            }
-        }*/
+        }
 
         public void Move(Movements move, Tile TileEntity)
         {

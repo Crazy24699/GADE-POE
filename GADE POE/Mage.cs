@@ -16,6 +16,7 @@ namespace GADE_POE
             MaxHP = 5;
             HP = MaxHP;
             Damage = 5;
+            GoldStored = 3;
             EnemyType = TileType.Mage;
             Symbol = TileType.Mage;
         }

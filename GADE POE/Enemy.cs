@@ -16,11 +16,18 @@ namespace GADEpart1
         public TileType EnemyType { get; set; }
 
         //public int EnemyGold { get; set; }
+ 
 
 
         public Enemy(int x, int y, int EnemyArrayValue) : base(x, y)
         {
             EnemyArray = EnemyArrayValue;
+
+            // the combat need to work for me to check if the enemy gold is being added to the heros gold
+            /*if (HP == 0)
+            {
+                GoldStored = GoldStored + EnemyGold;
+            }*/
         }
 
         public override string ToString()

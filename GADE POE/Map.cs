@@ -96,6 +96,11 @@ namespace GADEpart1
 
         public Map(int MaxHeight, int MaxWidth, int MinWidth, int MinHight, int EnemyCountRef, int TotalGoldPiles)
         {
+            MinHight = 7;
+            MaxHeight = 11;
+            MinWidth = 15;
+            MaxWidth = 20;
+
             yAxis = Rnd.Next(MinHight, MaxHeight);
             xAxis = Rnd.Next(MinWidth, MaxWidth);
             MapGrid = new Tile[yAxis, xAxis];
@@ -132,7 +137,7 @@ namespace GADEpart1
             int RandomizeEnemies;
             for (EnemyCount = 0; EnemyCount < TotalEnemyCount; EnemyCount++)
             {
-                RandomizeEnemies = Rnd.Next(2);
+                RandomizeEnemies = Rnd.Next(3);
                 if (RandomizeEnemies == 0)
                 {
                     TileCreate(Tile.TileType.SwampCreature);
@@ -140,6 +145,10 @@ namespace GADEpart1
                 if (RandomizeEnemies == 1)
                 {
                     TileCreate(Tile.TileType.Mage);
+                }
+                if (RandomizeEnemies == 2)
+                {
+                    TileCreate(Tile.TileType.Leader);
                 }
 
             }
@@ -222,6 +231,11 @@ namespace GADEpart1
             else if (Type == Tile.TileType.Mage)
             {
                 Enemies[EnemyCount] = new Mage(PositionX, PositionY, EnemyCount);
+                MapGrid[PositionY, PositionX] = Enemies[EnemyCount];
+            }
+            else if (Type == Tile.TileType.Leader)
+            {
+                Enemies[EnemyCount] = new Leader(PositionX, PositionY, EnemyCount);
                 MapGrid[PositionY, PositionX] = Enemies[EnemyCount];
             }
             else if (Type == Tile.TileType.Hero)
