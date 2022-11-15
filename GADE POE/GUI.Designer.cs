@@ -124,7 +124,7 @@
             // HeroStats
             // 
             this.HeroStats.AutoSize = true;
-            this.HeroStats.Location = new System.Drawing.Point(633, 285);
+            this.HeroStats.Location = new System.Drawing.Point(635, 235);
             this.HeroStats.Name = "HeroStats";
             this.HeroStats.Size = new System.Drawing.Size(38, 15);
             this.HeroStats.TabIndex = 6;
@@ -142,7 +142,7 @@
             // AttackCheck
             // 
             this.AttackCheck.AutoSize = true;
-            this.AttackCheck.Location = new System.Drawing.Point(464, 385);
+            this.AttackCheck.Location = new System.Drawing.Point(480, 386);
             this.AttackCheck.Name = "AttackCheck";
             this.AttackCheck.Size = new System.Drawing.Size(38, 15);
             this.AttackCheck.TabIndex = 8;

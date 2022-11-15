@@ -1,6 +1,7 @@
 ﻿using GADE_POE;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,17 +57,69 @@ namespace GADEpart1
         public virtual bool CheckRange(Characters target)
         {
 
-            //DistanceTo(target);
             return DistanceTo(target) == 1;
+        }
+
+
+        public void ChooseDirection(Hero Hero)
+        {
+            Debug.WriteLine(Hero.XValue);
+            int YVal = this.YValue - Hero.YValue;
+            int XVal = this.XValue - Hero.XValue;
+            if (YVal< 0)
+            {
+                YVal *= -1;
+            }
+            if(XVal< 0)
+            {
+                XVal *= -1;
+            }
+            if (YVal > XVal)
+            {
+                if (this.YValue < Hero.YValue)
+                {
+                    //Down
+                    Debug.WriteLine("Down");
+                }
+
+                if (this.YValue > Hero.YValue)
+                {
+                    //Up
+                    Debug.WriteLine("Up");
+                }
+
+            }
+
+
+            if (XVal == YVal && XVal<=1 && YVal<=1) 
+            {
+                Debug.WriteLine("Go random");
+            }
+
+
+            if (YVal < XVal)
+            {
+                if (this.XValue<Hero.XValue)
+                {
+                    //left
+                    Debug.WriteLine("Right");
+                }
+
+                if (this.XValue>Hero.XValue)
+                {
+                    //right
+                    Debug.WriteLine("Left");
+                }
+            }
         }
 
         public int DistanceTo(Characters target)
         {
 
             TargetDistance = Math.Abs((target.x - XValue) + (target.y - YValue));
-            XDistance = Math.Abs(target.x - XValue);
-            YDistance = Math.Abs(target.y - YValue);
-
+            //XDistance = target.x - XValue;
+            //YDistance = target.y - YValue;
+            
             return TargetDistance;
         }
 
@@ -88,6 +141,7 @@ namespace GADEpart1
         //loot function
         public void Loot(Characters Target)
         {
+
             if (Target.HP == 0)
             {
                 GoldStored = Target.GoldStored + GoldStored;

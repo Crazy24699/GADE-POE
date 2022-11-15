@@ -17,10 +17,11 @@ namespace GADEpart1
         //the hero constructor class
         public Hero(int x, int y, int MaxHp) : base(x, y)
         {
-            Damage = 2;
+            Damage = 10;
             MaxHP = 100;
             HP = MaxHP;
             Symbol = TileType.Hero;
+            GoldStored = 10;
             //HeldWeapon = CurrentWeapon;
             
             
@@ -65,6 +66,7 @@ namespace GADEpart1
             }
             else return Movements.NoMovement;
 
+            //update the polayers damage when they get a new weapon 
 
 
         }
