@@ -96,6 +96,11 @@ namespace GADEpart1
 
         public Map(int MaxHeight, int MaxWidth, int MinWidth, int MinHight, int EnemyCountRef, int TotalGoldPiles)
         {
+            MinHight = 7;
+            MaxHeight = 11;
+            MinWidth = 15;
+            MaxWidth = 20;
+
             yAxis = Rnd.Next(MinHight, MaxHeight);
             xAxis = Rnd.Next(MinWidth, MaxWidth);
             MapGrid = new Tile[yAxis, xAxis];
