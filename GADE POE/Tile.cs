@@ -17,15 +17,16 @@ namespace GADEpart1
         {
             Hero = 'H',
             SwampCreature = 'C',
+            Leader = 'L',
+            Mage = 'M',
             Gold = 'G',
             Dagger = 'D',
             LongSword = '$',
             LongBow = 'B',
             Rifle = 'R',
-            Mage = 'M',
             EmptyTile = 'o',
             Obstacle = 'X',
-            Leader = 'L'
+            
         }
 
         public int XValue
