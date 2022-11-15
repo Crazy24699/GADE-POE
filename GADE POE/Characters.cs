@@ -118,8 +118,7 @@ namespace GADEpart1
             }
             if (move == Movements.NoMovement)
             {
-                XValue = YValue + 0;
-                YValue = XValue + 0;
+                
             }
 
             Map.MapGrid[YValue, XValue] = TileEntity;

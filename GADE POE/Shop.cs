@@ -12,7 +12,12 @@ namespace GADE_POE
     public class Shop
     {
         //public Weapon[] Weapons= new Weapon[3];
-        public Weapon[] Weapons { get; set; }
+        private Weapon[] WeaponRef;
+        public Weapon[] Weapons
+        {
+            get;
+            set;
+        }
         private Random Rnd = new Random();
 
         public int XPos;
@@ -23,25 +28,21 @@ namespace GADE_POE
 
         public Shop(Characters Buyer) 
         {
-
             Weapons = new Weapon[3];
-            for (int i = 1; i < Weapons.Length; i++)
+            for (int i = 0; i < Weapons.Length; i++)
             {
-                //Weapons[i].WeaponCost = 5;
                 RandomWeapon(i);
-                //Debug.WriteLine(Weapons[1].WeaponCost.ToString());
-                //if (Weapons[i].CurrectWeapon == null)
-                //{
-                    
-                //}
 
+                //MessageBox.Show(Weapons[i].WeaponType.ToString());
             }
-        }
 
+
+
+        }
         private Weapon RandomWeapon(int WeaponSlot)
         {
             int RandomWeapon = 0;
-            RandomWeapon = Rnd.Next(1, 4);
+            RandomWeapon = Rnd.Next(1, 5);
             Debug.WriteLine(RandomWeapon);
             
 
@@ -52,6 +53,7 @@ namespace GADE_POE
                 case 1:
                     Weapons[WeaponSlot] = new MeleeWeapon(XPos, YPos, MeleeWeapon.Types.Dagger);
                     Weapons[WeaponSlot].WeaponType = Weapon.Type.Dagger;
+                    
                     break;
                 case 2:
                     Weapons[WeaponSlot] = new MeleeWeapon(XPos, YPos, MeleeWeapon.Types.LongSword);
@@ -71,6 +73,11 @@ namespace GADE_POE
             return null;
         }
 
+                    //testing
+        public void handleWeapon(int Slot)
+        {
+            RandomWeapon(Slot);
+        }
 
         public bool CanBuy(int Num)
         {

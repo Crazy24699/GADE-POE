@@ -30,7 +30,8 @@ namespace GADE_POE
         {
             GameEngine = new GameEngine();
             UpdateView();
-            
+
+            PopulateShop();
         }
 
         private void Map_TextChanged(object sender, EventArgs e)
@@ -53,7 +54,12 @@ namespace GADE_POE
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(GameEngine.Map.xAxis.ToString(), GameEngine.Map.yAxis.ToString());
+
+            //testing
+            for (int i = 0; i < GameEngine.Shop.Weapons.Length; i++)
+            {
+                Debug.Write(GameEngine.Shop.Weapons[i].WeaponType.ToString());
+            }
         }
 
 
@@ -92,19 +98,34 @@ namespace GADE_POE
         private void Slot1_Click(object sender, EventArgs e)
         {
 
-            BuyingItems(1);
+
+            BuyingItems(0);
+
+
+        }
+
+        public void PopulateShop()
+        {
+            Slot1.Text = GameEngine.Shop.Weapons[0].WeaponType.ToString();
+            Slot2.Text = GameEngine.Shop.Weapons[1].WeaponType.ToString();
+            slot3.Text = GameEngine.Shop.Weapons[2].WeaponType.ToString();
+
+            PriceSlot1.Text = GameEngine.Shop.Weapons[0].WeaponCost.ToString();
+            PriceSlot2.Text = GameEngine.Shop.Weapons[1].WeaponCost.ToString();
+            PriceSlot3.Text = GameEngine.Shop.Weapons[2].WeaponCost.ToString();
         }
 
         //buying item method
         public void BuyingItems(int Slot)
         {
+
             DialogResult ChosenOption = MessageBox.Show("Confrim Purchase", "Do you want to buy " + "ITEM " + " for " + "GOLD AMMOUNT",MessageBoxButtons.YesNo);
             
             if (ChosenOption == DialogResult.Yes)
             {
-                GameEngine.BuyItem(Slot);
-
-
+                //GameEngine.BuyItem(Slot);
+                GameEngine.Shop.handleWeapon(Slot);
+                PopulateShop();
             }
             else if(ChosenOption == DialogResult.No)
             {
@@ -114,12 +135,25 @@ namespace GADE_POE
 
         private void Slot2_Click(object sender, EventArgs e)
         {
-            BuyingItems(2);
+            BuyingItems(1);
+            
+            //Slot2.Text = GameEngine.Shop.Weapons[1].WeaponType.ToString();
         }
 
         private void slot3_Click(object sender, EventArgs e)
         {
-            BuyingItems(3);
+            BuyingItems(2);
+            //Slot2.Text = GameEngine.Shop.Weapons[2].WeaponType.ToString();
+        }
+
+        private void PriceSlot3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PriceSlot2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

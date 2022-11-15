@@ -10,11 +10,15 @@ namespace GADEpart1
 {
     public class Hero : Characters
     {
+
+        public string CurrentWeapon;
+
+
         //the hero constructor class
         public Hero(int x, int y, int MaxHp) : base(x, y)
         {
             Damage = 2;
-            MaxHP = 10;
+            MaxHP = 100;
             HP = MaxHP;
             Symbol = TileType.Hero;
             //HeldWeapon = CurrentWeapon;
@@ -23,7 +27,27 @@ namespace GADEpart1
 
         }
 
-       
+        public void ReadWeapon()
+        {
+            switch (CurrentWeapon)
+            {
+                default:
+                    CurrentWeapon = "Bare Hands";
+                    break;
+                case "Dagger":
+                    CurrentWeapon = "Dagger";
+                    break;
+                case "Longsword":
+                    CurrentWeapon = "Longsword";
+                    break;
+                case "Longbow":
+                    CurrentWeapon = "Longbow";
+                    break;
+                case "Rifle":
+                    CurrentWeapon = "Rifle";
+                    break;
+            }
+        }
 
         public bool OnGoldTile { get; set; } = false;
 
@@ -39,8 +63,9 @@ namespace GADEpart1
                 OnGoldTile = true;
                 return move;
             }
+            else return Movements.NoMovement;
 
-            return Movements.NoMovement;
+
         }
 
         public override string ToString()
@@ -48,7 +73,7 @@ namespace GADEpart1
             // not sure how to actually get the weapon info to show up.
             // if the hero has a weapon the durability must be shown as well.
 
-            return "PlayerStats:    \nHP:" + HP + "\nCurrent Weapon:" + "\nWeapon Range" + "\nWeapon Damage:" + Damage + "\nDurability:" +"\nGold" + GoldStored +"\n [" + x + "," + y + "]";
+            return "PlayerStats: \nHP:" + HP + "\nCurrent Weapon: " + CurrentWeapon + "\nWeapon Range" + "\nWeapon Damage:" + Damage + "\nDurability:" + "\nGold" + GoldStored + "\n [" + x + "," + y + "]";
         }
 
     }
