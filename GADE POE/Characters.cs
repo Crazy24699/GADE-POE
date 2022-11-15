@@ -52,8 +52,13 @@ namespace GADEpart1
             Right,
         }
         public Tile[] CharacterView { get; set; } = new Tile[5];
-        public bool Dead()
+        public bool Dead(Characters Target)
         {
+            if (Target.HP == 0)
+            {
+                GoldStored = Target.GoldStored + GoldStored;
+            }
+
             return CurrentHP <= 0;
         }
 
