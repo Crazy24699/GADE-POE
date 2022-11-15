@@ -27,6 +27,7 @@ namespace GADE_POE
         public Shop Shop
         {
             get { return ShopRef; }
+            set { ShopRef= value; }
         }
 
         private Hero HeroRef;
@@ -41,6 +42,7 @@ namespace GADE_POE
         public GameEngine()
         {
             Map = new Map(10, 16, 12, 6, 4, 3);
+            Shop = new Shop(Hero);
         }
 
         //Checks the players state, namely if they are alive or dead 
@@ -55,7 +57,8 @@ namespace GADE_POE
 
         public void BuyItem(int Slot)
         {
-            Shop shop = new Shop(Hero);
+            //Shop.Debuging();
+            
             
             //Check funds and if the buyer has enough then the item is transfered
             //switch (Shop.Weapons[Slot].CurrectWeapon)
@@ -141,28 +144,30 @@ namespace GADE_POE
 
         public void EnemyAttack()
         {
-            for (int EnemyNum = 0; EnemyNum < Map.TotalEnemyCount;)
+            for (int EnemyNum = 0; EnemyNum < Map.TotalEnemyCount; EnemyNum++) 
             {
                 if (Map.Enemies[EnemyNum].CheckRange(Map.Hero))
                 {
+                    //Debug.WriteLine(Map.Enemies[EnemyNum].EnemyType.ToString()+Map.Enemies[EnemyNum].XValue.ToString()+Map.Enemies[EnemyNum].YValue.ToString());
                     Map.Enemies[EnemyNum].Attack(Map.Hero);
                 }
 
                 if (MapRef.Enemies[EnemyNum].Symbol == Tile.TileType.Mage)
                 {
-                    for (int TargetsInRange = 0; TargetsInRange < Map.TotalEnemyCount;)
+                    for (int TargetsInRange = 0; TargetsInRange < Map.TotalEnemyCount; TargetsInRange++)
                     {
                         if (MapRef.Enemies[EnemyNum].CheckRange(Map.Enemies[TargetsInRange]))
                         {
-                            Map.Enemies[EnemyNum].Attack(Map.Enemies[EnemyNum]);
-                            CheckEnemyState(MapRef.Enemies[EnemyNum]);
+                           
+                            Map.Enemies[EnemyNum].Attack(Map.Enemies[TargetsInRange]);
+                            CheckEnemyState(MapRef.Enemies[TargetsInRange]);
                         }
 
-                        TargetsInRange++;
+                        
                     }
                 }
 
-                EnemyNum++;
+                
             }
             CheckPlayerState(Map.Hero);
         }

@@ -44,22 +44,7 @@ namespace GADE_POE
             get;
             set;
         }
-        
-          
-        
 
-
-        public string CurrentWeapon
-        {
-            get { return CurrentWeapon; }
-            set { CurrentWeapon = value; }
-        }
-
-        /*public string NewWeapon
-        {
-            get { return NewWeapon; }
-            set { NewWeapon = value; }
-        }*/
         public Weapon(int XPosition,int YPosition) : base(XPosition,YPosition)
         {
             Symbol = TileType.LongSword;

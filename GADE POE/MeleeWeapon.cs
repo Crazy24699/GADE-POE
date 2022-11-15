@@ -22,11 +22,9 @@ namespace GADE_POE
                 WeaponDurability = 10;
                 WeaponDamage = 3;
                 WeaponCost = 3;
-                MessageBox.Show("Dagger");
             }
             if(MeleeTypes == Types.LongSword)
             {
-                MessageBox.Show("Long");
                 WeaponDurability = 6;
                 WeaponDamage = 4;
                 WeaponCost = 5;

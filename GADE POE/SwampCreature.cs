@@ -35,7 +35,7 @@ namespace GADE_POE
             for (int i = 0; i < 3; i++)
             {
                 Random Direction = new Random();
-                Directions = Direction.Next(0, 5);
+                Directions = Direction.Next(1, 5);
                 Move = (Movements)Directions;
                 if (CharacterView[(int)Move].Symbol == TileType.EmptyTile)
                 {
