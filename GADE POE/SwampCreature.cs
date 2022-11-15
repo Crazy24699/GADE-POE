@@ -21,6 +21,7 @@ namespace GADE_POE
             MaxHP = 10;
             HP = MaxHP;
             Damage = 1;
+            EnemyGold = 1;
             EnemyType = TileType.SwampCreature;
             Symbol = TileType.SwampCreature;
         }

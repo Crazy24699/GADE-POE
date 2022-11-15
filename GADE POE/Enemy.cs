@@ -15,12 +15,18 @@ namespace GADEpart1
 
         public TileType EnemyType { get; set; }
 
-        //public int EnemyGold { get; set; }
+        public int EnemyGold { get; set; }
+ 
 
 
         public Enemy(int x, int y, int EnemyArrayValue) : base(x, y)
         {
             EnemyArray = EnemyArrayValue;
+
+            if (HP == 0)
+            {
+                GoldStored = GoldStored + EnemyGold;
+            }
         }
 
         public override string ToString()

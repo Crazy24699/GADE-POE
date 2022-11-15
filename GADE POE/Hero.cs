@@ -17,6 +17,7 @@ namespace GADEpart1
             MaxHP = 10;
             HP = MaxHP;
             Symbol = TileType.Hero;
+            //HeldWeapon = CurrentWeapon;
             
 
         }
@@ -46,7 +47,7 @@ namespace GADEpart1
             // not sure how to actually get the weapon info to show up.
             // if the hero has a weapon the durability must be shown as well.
 
-            return "PlayerStats:    \nHP:" + HP + "\nCurrent Weapon" + "\nWeapon Range" + "\nWeapon Damage:" + Damage + "\nDurability:" +"\nGold" + GoldStored +"\n [" + x + "," + y + "]";
+            return "PlayerStats:    \nHP:" + HP + "\nCurrent Weapon:" + "\nWeapon Range" + "\nWeapon Damage:" + Damage + "\nDurability:" +"\nGold" + GoldStored +"\n [" + x + "," + y + "]";
         }
 
     }
