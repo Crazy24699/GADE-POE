@@ -178,7 +178,7 @@ namespace GADE_POE
             Map.Hero.Move(Map.Hero.ReturnMove(Direction), Map.Hero);
             if (Map.Hero.OnGoldTile)
             {
-                Map.Hero.PickUp(Map.GetPositonInfo(Map.Hero.XValue, Map.Hero.YValue));
+                Map.Hero .PickUp(Map.GetPositonInfo(Map.Hero.XValue, Map.Hero.YValue));
                 Map.Hero.OnGoldTile = false;
             }
             Map.UpdateVision();

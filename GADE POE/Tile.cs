@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -17,6 +17,8 @@ namespace GADEpart1
         {
             Hero = 'H',
             SwampCreature = 'C',
+
+            //Weapon = 'W',
             Leader = 'L',
             Mage = 'M',
             Gold = 'G',

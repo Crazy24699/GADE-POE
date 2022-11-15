@@ -16,6 +16,13 @@ namespace GADE_POE
             set { GoldNum = value; }
         }
 
+        private string EquippedWeapon;
+        public string NewWeapon
+        {
+            get { return EquippedWeapon; }
+            set { EquippedWeapon = value; }
+        }
+
         public Item(int XPosition, int YPosition) : base(XPosition, YPosition)
         {
 

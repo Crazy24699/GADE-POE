@@ -44,9 +44,13 @@ namespace GADE_POE
             get;
             set;
         }
-       
+
         public Weapon(int XPosition,int YPosition) : base(XPosition,YPosition)
         {
+            Symbol = TileType.LongSword;
+            Symbol = TileType.Dagger;
+            Symbol = TileType.LongBow;
+            Symbol = TileType.Rifle;
 
         }
     }

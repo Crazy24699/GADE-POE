@@ -66,6 +66,7 @@ namespace GADEpart1
             else return Movements.NoMovement;
 
 
+
         }
 
         public override string ToString()
