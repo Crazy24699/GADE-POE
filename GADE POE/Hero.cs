@@ -12,12 +12,14 @@ namespace GADEpart1
     {
 
         public string CurrentWeapon;
+        public int WeaponDurability;
+        public int WeaponRange;
 
 
         //the hero constructor class
         public Hero(int x, int y, int MaxHp) : base(x, y)
         {
-            Damage = 10;
+            Damage = 2;
             MaxHP = 100;
             HP = MaxHP;
             Symbol = TileType.Hero;
@@ -27,6 +29,7 @@ namespace GADEpart1
             
 
         }
+
 
         public void ReadWeapon()
         {
@@ -47,6 +50,36 @@ namespace GADEpart1
                 case "Rifle":
                     CurrentWeapon = "Rifle";
                     break;
+            }
+
+            if (CurrentWeapon == "Bare Hands")
+            {
+                Damage = 2;
+                WeaponRange = 1;
+            }
+            else if (CurrentWeapon == "Dagger")
+            {
+                Damage = 3;
+                WeaponDurability = 10;
+                WeaponRange = 1;
+            }
+            else if (CurrentWeapon == "Longsword")
+            {
+                Damage = 4;
+                WeaponDurability = 6;
+                WeaponRange = 1;
+            }
+            else if (CurrentWeapon == "Longbow")
+            {
+                Damage = 4;
+                WeaponDurability = 4;
+                WeaponRange = 2;
+            }
+            else if (CurrentWeapon == "Rifle")
+            {
+                Damage = 5;
+                WeaponDurability = 3;
+                WeaponRange = 3;
             }
         }
 
@@ -76,7 +109,7 @@ namespace GADEpart1
             // not sure how to actually get the weapon info to show up.
             // if the hero has a weapon the durability must be shown as well.
 
-            return "PlayerStats: \nHP:" + HP + "\nCurrent Weapon: " + CurrentWeapon + "\nWeapon Range" + "\nWeapon Damage:" + Damage + "\nDurability:" + "\nGold" + GoldStored + "\n [" + x + "," + y + "]";
+            return "PlayerStats: \nHP:" + HP + "\nCurrent Weapon: " + CurrentWeapon + "\nWeapon Range: " + WeaponRange + "\nWeapon Damage:" + Damage + "\nDurability: " + WeaponDurability + "\nGold" + GoldStored + "\n [" + x + "," + y + "]";
         }
 
     }
