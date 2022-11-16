@@ -24,7 +24,6 @@ namespace GADE_POE
         //the person buying the gold
         public Characters Buyer;
 
-
         public Shop(Characters Buyer) 
         {
             Weapons = new Weapon[3];
@@ -75,7 +74,7 @@ namespace GADE_POE
         public bool CanBuy(int WeaponCost)
         {
             Debug.WriteLine(Buyer.GoldStored);
-            return Buyer.GoldStored > WeaponCost;
+            return Buyer.GoldStored >= WeaponCost;
         }
 
         public void Buy(int WeaponCost, int SlotTaken)
@@ -86,6 +85,8 @@ namespace GADE_POE
             {
                 //the if target thats buying does have enough money then it decreases the amount
                 Buyer.GoldStored -= WeaponCost;
+                Buyer.CurrentWeapon = Weapons[SlotTaken].WeaponType.ToString();
+                
                 RandomWeapon(SlotTaken);
             }
             else

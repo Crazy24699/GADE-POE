@@ -39,6 +39,9 @@ namespace GADEpart1
 
         public int Direction;
 
+        
+        public string CurrentWeapon { get; set; }
+
 
         public enum Movements
         {

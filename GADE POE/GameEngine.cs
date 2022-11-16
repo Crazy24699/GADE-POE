@@ -44,6 +44,7 @@ namespace GADE_POE
             Map = new Map(10, 16, 12, 6, 4, 3);
             Shop = new Shop(MapRef.Hero);
             Shop.Buyer = MapRef.Hero;
+            
         }
 
         //Checks the players state, namely if they are alive or dead 

@@ -142,10 +142,18 @@ namespace GADE_POE
             
             if (ChosenOption == DialogResult.Yes)
             {
+
+
+                if (GameEngine.Shop.CanBuy(Cost))
+                {
+                    GameEngine.Map.Hero.HeroWeapon = GameEngine.Shop.Weapons[Slot].WeaponType.ToString();
+                    GameEngine.Map.Hero.ReadWeapon();
+                }
                 GameEngine.Shop.Buy(Cost, Slot);
-                
+
                 PopulateShop();
                 UpdateView();
+                Debug.WriteLine(GameEngine.Map.Hero.HeroWeapon);
             }
             else if(ChosenOption == DialogResult.No)
             {
