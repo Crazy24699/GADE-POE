@@ -37,7 +37,7 @@ namespace GADEpart1
 
         public int GoldStored { get; set; }
 
-
+        public int Direction;
 
 
         public enum Movements
@@ -78,14 +78,16 @@ namespace GADEpart1
             {
                 if (this.YValue < Hero.YValue)
                 {
-                    //Down
-                    Debug.WriteLine("Down");
+                    //Down  1
+                    Direction = 2;
+                    //Debug.WriteLine(Direction);
                 }
 
                 if (this.YValue > Hero.YValue)
                 {
-                    //Up
-                    Debug.WriteLine("Up");
+                    //Up    2
+                    Direction = 1;
+                    //Debug.WriteLine(Direction);
                 }
 
             }
@@ -101,14 +103,16 @@ namespace GADEpart1
             {
                 if (this.XValue<Hero.XValue)
                 {
-                    //left
-                    Debug.WriteLine("Right");
+                    //left  3
+                    Direction = 4;
+                    //Debug.WriteLine(Direction);
                 }
 
                 if (this.XValue>Hero.XValue)
                 {
-                    //right
-                    Debug.WriteLine("Left");
+                    //right 4
+                    Direction = 3;
+                    //Debug.WriteLine(Direction);
                 }
             }
         }
@@ -155,6 +159,7 @@ namespace GADEpart1
             if (move == Movements.Up)
             {
                 YValue = YValue - 1;
+                //Debug.WriteLine("upwards");
             }
             if (move == Movements.Down)
             {
@@ -163,6 +168,7 @@ namespace GADEpart1
             if (move == Movements.Right)
             {
                 XValue = XValue + 1;
+                //Debug.WriteLine("Right");
             }
             if (move == Movements.Left)
             {

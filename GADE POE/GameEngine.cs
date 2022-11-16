@@ -77,13 +77,19 @@ namespace GADE_POE
         {
             for (int EnemyNum = 0; EnemyNum < Map.TotalEnemyCount; EnemyNum++)
             {
-                Map.Enemies[EnemyNum].Move(Map.Enemies[EnemyNum].ReturnMove(), Map.Enemies[EnemyNum]);
-                Map.UpdateVision();
+                if (Map.Enemies[EnemyNum].EnemyType != Tile.TileType.Leader)
+                {
+                    Map.Enemies[EnemyNum].Move(Map.Enemies[EnemyNum].ReturnMove(), Map.Enemies[EnemyNum]);
+                    Map.UpdateVision();
+                }
+
 
                 if (Map.Enemies[EnemyNum].EnemyType == Tile.TileType.Leader)
                 {
                     //Debug.WriteLine(Map.Enemies[EnemyNum].XValue);
                     Map.Enemies[EnemyNum].ChooseDirection(MapRef.Hero);
+                    Map.Enemies[EnemyNum].Move(Map.Enemies[EnemyNum].ReturnMove(), Map.Enemies[EnemyNum]);
+                    Map.UpdateVision();
                 }
             }
         }
