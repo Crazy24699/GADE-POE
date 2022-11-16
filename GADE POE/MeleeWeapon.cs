@@ -31,6 +31,11 @@ namespace GADE_POE
             }
         }
 
+        //
+        public MeleeWeapon(int XPosition, int YPosition) : base(XPosition, YPosition)
+        {
+        }
+        //
 
         public override string ToString()
         {
