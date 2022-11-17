@@ -36,7 +36,20 @@ namespace GADE_POE
             }
             else
             {
-                return Movements.NoMovement;
+
+            //    Random Direction = new Random();
+             //   Directions = Direction.Next(0, 5);
+             //   Move = (Movements)Directions;
+            //    if (CharacterView[(int)Move].Symbol == TileType.EmptyTile)
+           //     {
+            //        return Move;
+           //     }
+           //     if (CharacterView[(int)Move].Symbol == TileType.Hero)
+            //    {
+                    
+             //   }
+               // return Movements.NoMovement;
+
             }
 
         }

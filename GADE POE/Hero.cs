@@ -86,8 +86,6 @@ namespace GADEpart1
             }
             else return Movements.NoMovement;
 
-            //update the polayers damage when they get a new weapon 
-
 
         }
 
