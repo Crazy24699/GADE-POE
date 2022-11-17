@@ -42,7 +42,9 @@ namespace GADE_POE
         public GameEngine()
         {
             Map = new Map(10, 16, 12, 6, 4, 3);
-            Shop = new Shop(Hero);
+            Shop = new Shop(MapRef.Hero);
+            Shop.Buyer = MapRef.Hero;
+            
         }
 
         //Checks the players state, namely if they are alive or dead 
@@ -52,28 +54,10 @@ namespace GADE_POE
             if (Hero.Dead())
             {
                 Map.MapGrid[Hero.YValue, Hero.XValue] = new EmptyTIle(Hero.YValue, Hero.XValue);
+                //need the game to end here
             }
         }
 
-        public void BuyItem(int Slot)
-        {
-            //Shop.Debuging();
-            
-            
-            //Check funds and if the buyer has enough then the item is transfered
-            //switch (Shop.Weapons[Slot].CurrectWeapon)
-            //{
-            //    case "Dagger":
-            //        Shop.Buy(Shop.Weapons[Slot].WeaponCost, Slot);
-            //        MessageBox.Show(Shop.Weapons[Slot].WeaponCost.ToString());
-            //        break;
-            //    case "LongSword":
-            //        Shop.Buy(Shop.Weapons[Slot].WeaponCost, Slot);
-            //        break;
-            //}
-
-
-        }
 
         public void CheckEnemyState(Enemy Enemy)
         {
@@ -94,10 +78,20 @@ namespace GADE_POE
         {
             for (int EnemyNum = 0; EnemyNum < Map.TotalEnemyCount; EnemyNum++)
             {
-                Map.Enemies[EnemyNum].Move(Map.Enemies[EnemyNum].ReturnMove(), Map.Enemies[EnemyNum]);
-                Map.UpdateVision();
+                if (Map.Enemies[EnemyNum].EnemyType != Tile.TileType.Leader)
+                {
+                    Map.Enemies[EnemyNum].Move(Map.Enemies[EnemyNum].ReturnMove(), Map.Enemies[EnemyNum]);
+                    Map.UpdateVision();
+                }
 
 
+                if (Map.Enemies[EnemyNum].EnemyType == Tile.TileType.Leader)
+                {
+                    //Debug.WriteLine(Map.Enemies[EnemyNum].XValue);
+                    Map.Enemies[EnemyNum].ChooseDirection(MapRef.Hero);
+                    Map.Enemies[EnemyNum].Move(Map.Enemies[EnemyNum].ReturnMove(), Map.Enemies[EnemyNum]);
+                    Map.UpdateVision();
+                }
             }
         }
 
@@ -150,6 +144,7 @@ namespace GADE_POE
                 {
                     //Debug.WriteLine(Map.Enemies[EnemyNum].EnemyType.ToString()+Map.Enemies[EnemyNum].XValue.ToString()+Map.Enemies[EnemyNum].YValue.ToString());
                     Map.Enemies[EnemyNum].Attack(Map.Hero);
+                    //Map.Enemies[EnemyNum].Loot(Hero);
                 }
 
                 if (MapRef.Enemies[EnemyNum].Symbol == Tile.TileType.Mage)
@@ -161,6 +156,7 @@ namespace GADE_POE
                            
                             Map.Enemies[EnemyNum].Attack(Map.Enemies[TargetsInRange]);
                             CheckEnemyState(MapRef.Enemies[TargetsInRange]);
+                            //Map.Enemies[EnemyNum].Loot(Map.Enemies[TargetsInRange]);
                         }
 
                         

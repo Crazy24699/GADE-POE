@@ -54,12 +54,31 @@ namespace GADE_POE
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-
-            //testing
-            for (int i = 0; i < GameEngine.Shop.Weapons.Length; i++)
+            Enemy Enemy;
+            try
             {
-                Debug.Write(GameEngine.Shop.Weapons[i].WeaponType.ToString());
+                Enemy = GameEngine.Map.Enemies[EnemyList.SelectedIndex];
             }
+            catch 
+            {
+                AttackCheck.Text = "You have not selectd a enemy to attack";
+                return;
+            }
+
+            if (GameEngine.Map.Hero.CheckRange(Enemy))
+            {
+                GameEngine.Map.Hero.Attack(Enemy);
+                GameEngine.CheckEnemyState(Enemy);
+                AttackCheck.Text = "Hit confirmed, Attack Succeeded";
+                GameEngine.Map.Hero.Loot(Enemy);
+            }
+            else if (!GameEngine.Map.Hero.CheckRange(Enemy))
+            {
+                AttackCheck.Text = "Attack failed";
+            }
+            GameEngine.EnemyAttack();
+            UpdateView();
+
         }
 
 
@@ -99,7 +118,7 @@ namespace GADE_POE
         {
 
 
-            BuyingItems(0);
+            BuyingItems(GameEngine.Shop.Weapons[0].WeaponCost, 0);
 
 
         }
@@ -116,16 +135,25 @@ namespace GADE_POE
         }
 
         //buying item method
-        public void BuyingItems(int Slot)
+        public void BuyingItems(int Cost, int Slot)
         {
 
-            DialogResult ChosenOption = MessageBox.Show("Confrim Purchase", "Do you want to buy " + "ITEM " + " for " + "GOLD AMMOUNT",MessageBoxButtons.YesNo);
+            DialogResult ChosenOption = MessageBox.Show("Confirm Purchase", "Do you want to buy " + "ITEM " + " for " + "GOLD AMMOUNT",MessageBoxButtons.YesNo);
             
             if (ChosenOption == DialogResult.Yes)
             {
-                //GameEngine.BuyItem(Slot);
-                GameEngine.Shop.handleWeapon(Slot);
+
+
+                if (GameEngine.Shop.CanBuy(Cost))
+                {
+                    GameEngine.Map.Hero.HeroWeapon = GameEngine.Shop.Weapons[Slot].WeaponType.ToString();
+                    GameEngine.Map.Hero.ReadWeapon();
+                }
+                GameEngine.Shop.Buy(Cost, Slot);
+
                 PopulateShop();
+                UpdateView();
+                Debug.WriteLine(GameEngine.Map.Hero.HeroWeapon);
             }
             else if(ChosenOption == DialogResult.No)
             {
@@ -135,14 +163,14 @@ namespace GADE_POE
 
         private void Slot2_Click(object sender, EventArgs e)
         {
-            BuyingItems(1);
+            BuyingItems(GameEngine.Shop.Weapons[1].WeaponCost, 1);
             
             //Slot2.Text = GameEngine.Shop.Weapons[1].WeaponType.ToString();
         }
 
         private void slot3_Click(object sender, EventArgs e)
         {
-            BuyingItems(2);
+            BuyingItems(GameEngine.Shop.Weapons[2].WeaponCost,2);
             //Slot2.Text = GameEngine.Shop.Weapons[2].WeaponType.ToString();
         }
 

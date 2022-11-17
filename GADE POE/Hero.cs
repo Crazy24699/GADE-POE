@@ -11,7 +11,9 @@ namespace GADEpart1
     public class Hero : Characters
     {
 
-        public string CurrentWeapon;
+        public string HeroWeapon;
+        public int WeaponDurability;
+        public int WeaponRange;
 
 
         //the hero constructor class
@@ -20,33 +22,52 @@ namespace GADEpart1
             Damage = 2;
             MaxHP = 100;
             HP = MaxHP;
+            HeroWeapon = CurrentWeapon;
             Symbol = TileType.Hero;
+            GoldStored = 10;
             //HeldWeapon = CurrentWeapon;
-            
+            ReadWeapon();
             
 
         }
 
+
         public void ReadWeapon()
         {
-            switch (CurrentWeapon)
+            switch (HeroWeapon)
             {
                 default:
-                    CurrentWeapon = "Bare Hands";
+                    HeroWeapon = "Bare Hands";
+                    Damage = 2;
+                    WeaponRange = 1;
                     break;
                 case "Dagger":
-                    CurrentWeapon = "Dagger";
+                    HeroWeapon = "Dagger";
+                    Damage = 3;
+                    WeaponDurability = 10;
+                    WeaponRange = 1;
                     break;
                 case "Longsword":
-                    CurrentWeapon = "Longsword";
+                    HeroWeapon = "Longsword";
+                    Damage = 4;
+                    WeaponDurability = 6;
+                    WeaponRange = 1;
                     break;
                 case "Longbow":
-                    CurrentWeapon = "Longbow";
+                    HeroWeapon = "Longbow";
+                    Damage = 4;
+                    WeaponDurability = 4;
+                    WeaponRange = 2;
                     break;
                 case "Rifle":
-                    CurrentWeapon = "Rifle";
+                    HeroWeapon = "Rifle";
+                    Damage = 5;
+                    WeaponDurability = 3;
+                    WeaponRange = 3;
                     break;
             }
+
+
         }
 
         public bool OnGoldTile { get; set; } = false;
@@ -65,6 +86,7 @@ namespace GADEpart1
             }
             else return Movements.NoMovement;
 
+            //update the polayers damage when they get a new weapon 
 
 
         }
@@ -74,7 +96,7 @@ namespace GADEpart1
             // not sure how to actually get the weapon info to show up.
             // if the hero has a weapon the durability must be shown as well.
 
-            return "PlayerStats: \nHP:" + HP + "\nCurrent Weapon: " + CurrentWeapon + "\nWeapon Range" + "\nWeapon Damage:" + Damage + "\nDurability:" + "\nGold" + GoldStored + "\n [" + x + "," + y + "]";
+            return "PlayerStats: \nHP:" + HP + "\nCurrent Weapon: " + HeroWeapon + "\nWeapon Range: " + WeaponRange + "\nWeapon Damage:" + Damage + "\nDurability: " + WeaponDurability + "\nGold" + GoldStored + "\n [" + x + "," + y + "]";
         }
 
     }

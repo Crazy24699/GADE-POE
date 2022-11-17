@@ -1,6 +1,7 @@
 ﻿using GADE_POE;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,10 @@ namespace GADEpart1
 
         public int GoldStored { get; set; }
 
+        public int Direction;
 
+        
+        public string CurrentWeapon { get; set; }
 
 
         public enum Movements
@@ -56,17 +60,73 @@ namespace GADEpart1
         public virtual bool CheckRange(Characters target)
         {
 
-            //DistanceTo(target);
             return DistanceTo(target) == 1;
+        }
+
+
+        public void ChooseDirection(Hero Hero)
+        {
+            Debug.WriteLine(Hero.XValue);
+            int YVal = this.YValue - Hero.YValue;
+            int XVal = this.XValue - Hero.XValue;
+            if (YVal< 0)
+            {
+                YVal *= -1;
+            }
+            if(XVal< 0)
+            {
+                XVal *= -1;
+            }
+            if (YVal > XVal)
+            {
+                if (this.YValue < Hero.YValue)
+                {
+                    //Down  1
+                    Direction = 2;
+                    //Debug.WriteLine(Direction);
+                }
+
+                if (this.YValue > Hero.YValue)
+                {
+                    //Up    2
+                    Direction = 1;
+                    //Debug.WriteLine(Direction);
+                }
+
+            }
+
+
+            if (XVal == YVal && XVal<=1 && YVal<=1) 
+            {
+                Debug.WriteLine("Go random");
+            }
+
+
+            if (YVal < XVal)
+            {
+                if (this.XValue<Hero.XValue)
+                {
+                    //left  3
+                    Direction = 4;
+                    //Debug.WriteLine(Direction);
+                }
+
+                if (this.XValue>Hero.XValue)
+                {
+                    //right 4
+                    Direction = 3;
+                    //Debug.WriteLine(Direction);
+                }
+            }
         }
 
         public int DistanceTo(Characters target)
         {
 
             TargetDistance = Math.Abs((target.x - XValue) + (target.y - YValue));
-            XDistance = Math.Abs(target.x - XValue);
-            YDistance = Math.Abs(target.y - YValue);
-
+            //XDistance = target.x - XValue;
+            //YDistance = target.y - YValue;
+            
             return TargetDistance;
         }
 
@@ -88,6 +148,7 @@ namespace GADEpart1
         //loot function
         public void Loot(Characters Target)
         {
+
             if (Target.HP == 0)
             {
                 GoldStored = Target.GoldStored + GoldStored;
@@ -101,6 +162,7 @@ namespace GADEpart1
             if (move == Movements.Up)
             {
                 YValue = YValue - 1;
+                //Debug.WriteLine("upwards");
             }
             if (move == Movements.Down)
             {
@@ -109,6 +171,7 @@ namespace GADEpart1
             if (move == Movements.Right)
             {
                 XValue = XValue + 1;
+                //Debug.WriteLine("Right");
             }
             if (move == Movements.Left)
             {
