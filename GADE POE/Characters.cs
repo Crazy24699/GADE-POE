@@ -16,7 +16,7 @@ namespace GADEpart1
         {
 
         }
-
+        //gives characters stats
         protected int HP { get; set; }
         protected int TotalHP { get; set; }
 
@@ -129,12 +129,12 @@ namespace GADEpart1
             
             return TargetDistance;
         }
-
+        //attack function
         public void Attack(Characters Target)
         {
             Target.HP = Target.HP - Damage;
         }
-
+        //pickup function
         public void PickUp(Item ItemPickup)
         {
 
@@ -154,7 +154,7 @@ namespace GADEpart1
                 GoldStored = Target.GoldStored + GoldStored;
             }
         }
-
+        //allows movement
         public void Move(Movements move, Tile TileEntity)
         {
 

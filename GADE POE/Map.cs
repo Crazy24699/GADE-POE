@@ -41,6 +41,11 @@ namespace GADEpart1
         public int TotalGold;
         public int GoldNum;
 
+        /*
+        public int TotalMeleeWeapon;
+        public int MeleeWeaponNum;
+        */
+
         public int TotalEnemyCount;
         public int EnemyCount;
 
@@ -94,7 +99,7 @@ namespace GADEpart1
         public Random HeroY = new Random();
 
 
-        public Map(int MaxHeight, int MaxWidth, int MinWidth, int MinHight, int EnemyCountRef, int TotalGoldPiles)
+        public Map(int MaxHeight, int MaxWidth, int MinWidth, int MinHight, int EnemyCountRef, int TotalGoldPiles) //int TotalMeleeWeaponSpawn
         {
             MinHight = 7;
             MaxHeight = 11;
@@ -110,6 +115,11 @@ namespace GADEpart1
 
             TotalGold = TotalGoldPiles;
             Items = new Item[TotalGold];
+
+            /*
+            TotalMeleeWeapon = TotalMeleeWeaponSpawn;
+            Items = new Item[TotalMeleeWeapon];
+            */
 
 
             for (int Row = 0; Row < MapGrid.GetLength(0); Row++)
@@ -133,7 +143,7 @@ namespace GADEpart1
                     }
                 }
             }
-
+            //Spawns different enemies and gold
             int RandomizeEnemies;
             for (EnemyCount = 0; EnemyCount < TotalEnemyCount; EnemyCount++)
             {
@@ -158,6 +168,13 @@ namespace GADEpart1
                 TileCreate(Tile.TileType.Gold);
             }
 
+            /*
+            for (MeleeWeaponNum = 0; MeleeWeaponNum < TotalMeleeWeapon; MeleeWeaponNum++)
+            {
+                TileCreate(Tile.TileType.Dagger);
+                TileCreate(Tile.TileType.LongSword);
+            }
+            */
             TileCreate(Tile.TileType.Hero);
             UpdateVision();
         }
@@ -243,12 +260,24 @@ namespace GADEpart1
                 Hero = new Hero(PositionX, PositionY, 30);
                 MapGrid[PositionY, PositionX] = Hero;
             }
-            else
+            else if (Type == Tile.TileType.Gold)
             {
                 Items[GoldNum] = new Gold(PositionX, PositionY);
                 MapGrid[PositionY, PositionX] = Items[GoldNum];
             }
 
+            /*
+            else if (Type == Tile.TileType.Dagger)
+            {
+                Items[MeleeWeaponNum] = new MeleeWeapon(PositionX, PositionY);
+                MapGrid[PositionY, PositionX] = Items[MeleeWeaponNum];
+            }
+            else if (Type == Tile.TileType.LongSword)
+            {
+                Items[MeleeWeaponNum] = new MeleeWeapon(PositionX, PositionY);
+                MapGrid[PositionY, PositionX] = Items[MeleeWeaponNum];
+            }
+            */
             return MapGrid[PositionY, PositionX];
         }
 
@@ -257,7 +286,7 @@ namespace GADEpart1
         {
 
         }
-
+        //Generates map
         public void GenerateMap()
         {
             MapImage = "";

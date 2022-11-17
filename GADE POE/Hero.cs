@@ -31,7 +31,7 @@ namespace GADEpart1
 
         }
 
-
+        // Puts the weapon and its stats in the Hero's stats
         public void ReadWeapon()
         {
             switch (HeroWeapon)
@@ -93,8 +93,7 @@ namespace GADEpart1
 
         public override string ToString()
         {
-            // not sure how to actually get the weapon info to show up.
-            // if the hero has a weapon the durability must be shown as well.
+            //The heros stats
 
             return "PlayerStats: \nHP:" + HP + "\nCurrent Weapon: " + HeroWeapon + "\nWeapon Range: " + WeaponRange + "\nWeapon Damage:" + Damage + "\nDurability: " + WeaponDurability + "\nGold" + GoldStored + "\n [" + x + "," + y + "]";
         }

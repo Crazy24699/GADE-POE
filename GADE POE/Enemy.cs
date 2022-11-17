@@ -18,7 +18,7 @@ namespace GADEpart1
         //public int EnemyGold { get; set; }
  
 
-
+        //Enemy gives gold when it dies
         public Enemy(int x, int y, int EnemyArrayValue) : base(x, y)
         {
             EnemyArray = EnemyArrayValue;
@@ -29,7 +29,7 @@ namespace GADEpart1
                 GoldStored = GoldStored + EnemyGold;
             }*/
         }
-
+        //Enemy stats
         public override string ToString()
         {
             // not sure how to get the enemy weapon so show as well

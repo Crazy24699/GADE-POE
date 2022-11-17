@@ -12,13 +12,12 @@ namespace GADEpart1
         protected int x;
         protected int y;
 
-
+        //Symbols for the map
         public enum TileType
         {
             Hero = 'H',
             SwampCreature = 'C',
 
-            //Weapon = 'W',
             Leader = 'L',
             Mage = 'M',
             Gold = 'G',
