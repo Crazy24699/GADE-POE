@@ -28,6 +28,11 @@ namespace GADEpart1
             //HeldWeapon = CurrentWeapon;
             ReadWeapon();
             
+            if (HP == 0)
+            {
+                MessageBox.Show("You Died");
+                Application.Exit();
+            }
 
         }
 

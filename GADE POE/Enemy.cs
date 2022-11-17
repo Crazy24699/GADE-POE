@@ -18,6 +18,7 @@ namespace GADEpart1
         //public int EnemyGold { get; set; }
  
 
+
         //Enemy gives gold when it dies
         public Enemy(int x, int y, int EnemyArrayValue) : base(x, y)
         {
