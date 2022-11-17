@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GADEpart1
 {
@@ -33,6 +34,11 @@ namespace GADEpart1
         //Enemy stats
         public override string ToString()
         {
+            if (HP <= 0)
+            {
+                MessageBox.Show("You win");
+                Application.Exit();
+            }
             // not sure how to get the enemy weapon so show as well
             // enemies spawn with specific weapons and can pick up new ones at they move. the mage has no weapons and uses fists.
             return EnemyType + "(" + CurrentHP + "/" + MaxHP + " HP" + ")" + " at " + "[" + XValue.ToString() + "," + YValue.ToString() + "] " + " (" + Damage.ToString() + " DMG" + ")"+GoldStored;
