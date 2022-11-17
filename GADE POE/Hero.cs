@@ -28,11 +28,7 @@ namespace GADEpart1
             //HeldWeapon = CurrentWeapon;
             ReadWeapon();
             
-            if (HP == 0)
-            {
-                MessageBox.Show("You Died");
-                Application.Exit();
-            }
+            
 
         }
 
@@ -97,6 +93,11 @@ namespace GADEpart1
         public override string ToString()
         {
             //The heros stats
+            if (HP <= 0)
+            {
+                MessageBox.Show("You Died");
+                Application.Exit();
+            }
 
             return "PlayerStats: \nHP:" + HP + "\nCurrent Weapon: " + HeroWeapon + "\nWeapon Range: " + WeaponRange + "\nWeapon Damage:" + Damage + "\nDurability: " + WeaponDurability + "\nGold" + GoldStored + "\n [" + x + "," + y + "]";
         }
