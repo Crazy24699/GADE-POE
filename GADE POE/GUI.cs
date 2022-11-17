@@ -43,7 +43,7 @@ namespace GADE_POE
         {
 
         }
-
+        //Allows player to move up
         private void Up_Click(object sender, EventArgs e)
         {
             GameEngine.MovePlayer(Characters.Movements.Up);
@@ -51,7 +51,7 @@ namespace GADE_POE
             UpdateView();
             AttackCheck.Text = "";
         }
-
+        //Allows player to attack
         private void btnAttack_Click(object sender, EventArgs e)
         {
             Enemy Enemy;
@@ -82,7 +82,7 @@ namespace GADE_POE
         }
 
 
-
+        //Allows player to move right
         private void Right_Click(object sender, EventArgs e)
         {
             GameEngine.MovePlayer(Characters.Movements.Right);
@@ -92,7 +92,7 @@ namespace GADE_POE
         }
 
 
-
+        // Allows player to move left
         private void Left_Click(object sender, EventArgs e)
         {
             GameEngine.MovePlayer(Characters.Movements.Left);
@@ -100,7 +100,7 @@ namespace GADE_POE
             UpdateView();
             AttackCheck.Text = "";
         }
-
+        //Allows the player to move down
         private void Down_Click(object sender, EventArgs e)
         {
             GameEngine.MovePlayer(Characters.Movements.Down);
@@ -108,7 +108,7 @@ namespace GADE_POE
             UpdateView();
             AttackCheck.Text = "";
         }
-
+        //Allows the player to svae
         private void btnSave_Click(object sender, EventArgs e)
         {
             GameEngine.Save();
@@ -122,7 +122,7 @@ namespace GADE_POE
 
 
         }
-
+        //Populates the shop with weapons
         public void PopulateShop()
         {
             Slot1.Text = GameEngine.Shop.Weapons[0].WeaponType.ToString();

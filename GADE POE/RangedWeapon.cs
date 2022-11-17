@@ -13,7 +13,7 @@ namespace GADE_POE
             Rifle,
             Longbow
         }
-
+        //Ranged weapons stats
         public RangedWeapon(int XPosition, int YPosition, Types Weapons) : base(XPosition, YPosition)
         {
             if (Weapons == Types.Rifle)

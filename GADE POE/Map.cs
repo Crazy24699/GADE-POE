@@ -143,7 +143,7 @@ namespace GADEpart1
                     }
                 }
             }
-
+            //Spawns different enemies and gold
             int RandomizeEnemies;
             for (EnemyCount = 0; EnemyCount < TotalEnemyCount; EnemyCount++)
             {
@@ -286,7 +286,7 @@ namespace GADEpart1
         {
 
         }
-
+        //Generates map
         public void GenerateMap()
         {
             MapImage = "";

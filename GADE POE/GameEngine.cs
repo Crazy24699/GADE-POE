@@ -58,7 +58,7 @@ namespace GADE_POE
             }
         }
 
-
+        //changes enemy stat if dead
         public void CheckEnemyState(Enemy Enemy)
         {
             if (Enemy.Dead())
@@ -73,7 +73,7 @@ namespace GADE_POE
                 Map.MapGrid[Enemy.YValue, Enemy.XValue] = new EmptyTIle(Enemy.XValue, Enemy.YValue);
             }
         }
-
+        //Enemy movement
         public void EnemyMovement()
         {
             for (int EnemyNum = 0; EnemyNum < Map.TotalEnemyCount; EnemyNum++)
@@ -135,7 +135,7 @@ namespace GADE_POE
 
 
         //}
-
+        //Checks if enemy can attack
         public void EnemyAttack()
         {
             for (int EnemyNum = 0; EnemyNum < Map.TotalEnemyCount; EnemyNum++) 
@@ -167,7 +167,7 @@ namespace GADE_POE
             }
             CheckPlayerState(Map.Hero);
         }
-
+        //Hero movement
         public void MovePlayer(Characters.Movements Direction)
         {
 
@@ -179,7 +179,7 @@ namespace GADE_POE
             }
             Map.UpdateVision();
         }
-
+        //The save a load function
         public void Save()
         {
             string filename = "map.bin";

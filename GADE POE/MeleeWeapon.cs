@@ -14,7 +14,7 @@ namespace GADE_POE
             Dagger,
             LongSword
         }
-
+        //Sets stats for melee weapons
         public MeleeWeapon(int XPosition, int YPosition, Types MeleeTypes) : base(XPosition, YPosition)
         {
             if(MeleeTypes == Types.Dagger)
