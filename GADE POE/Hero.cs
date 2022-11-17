@@ -20,7 +20,7 @@ namespace GADEpart1
         public Hero(int x, int y, int MaxHp) : base(x, y)
         {
             Damage = 2;
-            MaxHP = 100;
+            MaxHP = 20;
             HP = MaxHP;
             HeroWeapon = CurrentWeapon;
             Symbol = TileType.Hero;

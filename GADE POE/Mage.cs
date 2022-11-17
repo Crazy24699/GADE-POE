@@ -13,7 +13,7 @@ namespace GADE_POE
     {
         public Mage(int x, int y, int EnemyArray) : base(x, y, EnemyArray)
         {
-            MaxHP = 50;
+            MaxHP = 10;
             HP = MaxHP;
             Damage = 5;
             GoldStored = 3;
