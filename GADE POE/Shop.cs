@@ -12,46 +12,46 @@ namespace GADE_POE
     public class Shop
     {
         //public Weapon[] Weapons= new Weapon[3];
-        public Weapon[] Weapons { get; set; }
+        public Weapon[] Weapons
+        {
+            get;
+            set;
+        }
         private Random Rnd = new Random();
 
         public int XPos;
         public int YPos;
         //the person buying the gold
-        private Characters Character { get; set; }
-
+        public Characters Buyer;
 
         public Shop(Characters Buyer) 
         {
-
             Weapons = new Weapon[3];
-            for (int i = 1; i < Weapons.Length; i++)
+            for (int i = 0; i < Weapons.Length; i++)
             {
-                //Weapons[i].WeaponCost = 5;
+                
                 RandomWeapon(i);
-                //Debug.WriteLine(Weapons[1].WeaponCost.ToString());
-                //if (Weapons[i].CurrectWeapon == null)
-                //{
-                    
-                //}
-
             }
+            
+
+
         }
 
         private Weapon RandomWeapon(int WeaponSlot)
         {
             int RandomWeapon = 0;
-            RandomWeapon = Rnd.Next(1, 4);
+            RandomWeapon = Rnd.Next(1, 5);
             Debug.WriteLine(RandomWeapon);
-            
 
+            //Debug.WriteLine(Buyer.GoldStored);
 
-                    //picks a random weapon based on the random variable it generated at the beggining of the code
+            //picks a random weapon based on the random variable it generated at the beggining of the code
             switch (RandomWeapon)
             {
                 case 1:
                     Weapons[WeaponSlot] = new MeleeWeapon(XPos, YPos, MeleeWeapon.Types.Dagger);
                     Weapons[WeaponSlot].WeaponType = Weapon.Type.Dagger;
+                    
                     break;
                 case 2:
                     Weapons[WeaponSlot] = new MeleeWeapon(XPos, YPos, MeleeWeapon.Types.LongSword);
@@ -71,22 +71,27 @@ namespace GADE_POE
             return null;
         }
 
-
-        public bool CanBuy(int Num)
+        public bool CanBuy(int WeaponCost)
         {
-
-            return Character.GoldStored > Num;
+            Debug.WriteLine(Buyer.GoldStored);
+            return Buyer.GoldStored >= WeaponCost;
         }
 
-        public void Buy(int num, int SlotTaken)
+        public void Buy(int WeaponCost, int SlotTaken)
         {
 
             //checks if the target thats buying the item has enough money to buy the item from them 
-            if (CanBuy(num)) 
+            if (CanBuy(WeaponCost)) 
             {
                 //the if target thats buying does have enough money then it decreases the amount
-                Character.GoldStored -= num;
+                Buyer.GoldStored -= WeaponCost;
+                Buyer.CurrentWeapon = Weapons[SlotTaken].WeaponType.ToString();
+                
                 RandomWeapon(SlotTaken);
+            }
+            else
+            {
+                MessageBox.Show("You dont have enough funds for that item");
             }
         }
 

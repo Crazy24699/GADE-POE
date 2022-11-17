@@ -13,7 +13,7 @@ namespace GADE_POE
     {
         public Mage(int x, int y, int EnemyArray) : base(x, y, EnemyArray)
         {
-            MaxHP = 5;
+            MaxHP = 50;
             HP = MaxHP;
             Damage = 5;
             GoldStored = 3;
@@ -26,19 +26,16 @@ namespace GADE_POE
         public override Movements ReturnMove(Movements Move = 0)
         {
 
-            Random random = new Random();
-
-
-            Type Direction = typeof(Movements);
-            Array Movement = Direction.GetEnumValues();
-
-            return Move;
+            return Movements.NoMovement;
         }
         public override bool CheckRange(Characters target)
         {
             double Distance = Math.Pow(target.XValue - XValue, 2) + Math.Pow(target.YValue - YValue, 2);
             Distance = Math.Abs(Distance);
-
+            if(Distance <= 2 && Distance > 0)
+            {
+                //Debug.WriteLine(target.Symbol.ToString());
+            }
             return Distance <= 2 && Distance > 0;
         }
 

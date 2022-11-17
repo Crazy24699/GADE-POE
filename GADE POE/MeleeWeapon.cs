@@ -14,7 +14,7 @@ namespace GADE_POE
             Dagger,
             LongSword
         }
-
+        //Sets stats for melee weapons
         public MeleeWeapon(int XPosition, int YPosition, Types MeleeTypes) : base(XPosition, YPosition)
         {
             if(MeleeTypes == Types.Dagger)
@@ -22,17 +22,20 @@ namespace GADE_POE
                 WeaponDurability = 10;
                 WeaponDamage = 3;
                 WeaponCost = 3;
-                MessageBox.Show("Dagger");
             }
             if(MeleeTypes == Types.LongSword)
             {
-                MessageBox.Show("Long");
                 WeaponDurability = 6;
                 WeaponDamage = 4;
                 WeaponCost = 5;
             }
         }
 
+        /*
+        public MeleeWeapon(int XPosition, int YPosition) : base(XPosition, YPosition)
+        {
+        }
+        */
 
         public override string ToString()
         {

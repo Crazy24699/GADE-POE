@@ -43,6 +43,9 @@
             this.Slot1 = new System.Windows.Forms.Button();
             this.Slot2 = new System.Windows.Forms.Button();
             this.slot3 = new System.Windows.Forms.Button();
+            this.PriceSlot1 = new System.Windows.Forms.Label();
+            this.PriceSlot2 = new System.Windows.Forms.Label();
+            this.PriceSlot3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Up
@@ -121,7 +124,7 @@
             // HeroStats
             // 
             this.HeroStats.AutoSize = true;
-            this.HeroStats.Location = new System.Drawing.Point(633, 285);
+            this.HeroStats.Location = new System.Drawing.Point(635, 235);
             this.HeroStats.Name = "HeroStats";
             this.HeroStats.Size = new System.Drawing.Size(38, 15);
             this.HeroStats.TabIndex = 6;
@@ -139,7 +142,7 @@
             // AttackCheck
             // 
             this.AttackCheck.AutoSize = true;
-            this.AttackCheck.Location = new System.Drawing.Point(464, 385);
+            this.AttackCheck.Location = new System.Drawing.Point(480, 386);
             this.AttackCheck.Name = "AttackCheck";
             this.AttackCheck.Size = new System.Drawing.Size(38, 15);
             this.AttackCheck.TabIndex = 8;
@@ -159,7 +162,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(114, 385);
+            this.label1.Location = new System.Drawing.Point(244, 395);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 25);
             this.label1.TabIndex = 10;
@@ -167,36 +170,71 @@
             // 
             // Slot1
             // 
-            this.Slot1.Location = new System.Drawing.Point(30, 440);
+            this.Slot1.Location = new System.Drawing.Point(133, 442);
             this.Slot1.Name = "Slot1";
-            this.Slot1.Size = new System.Drawing.Size(60, 50);
+            this.Slot1.Size = new System.Drawing.Size(80, 60);
             this.Slot1.TabIndex = 11;
             this.Slot1.UseVisualStyleBackColor = true;
             this.Slot1.Click += new System.EventHandler(this.Slot1_Click);
             // 
             // Slot2
             // 
-            this.Slot2.Location = new System.Drawing.Point(114, 440);
+            this.Slot2.Location = new System.Drawing.Point(239, 442);
             this.Slot2.Name = "Slot2";
-            this.Slot2.Size = new System.Drawing.Size(60, 50);
+            this.Slot2.Size = new System.Drawing.Size(80, 60);
             this.Slot2.TabIndex = 11;
             this.Slot2.UseVisualStyleBackColor = true;
             this.Slot2.Click += new System.EventHandler(this.Slot2_Click);
             // 
             // slot3
             // 
-            this.slot3.Location = new System.Drawing.Point(200, 440);
+            this.slot3.Location = new System.Drawing.Point(346, 442);
             this.slot3.Name = "slot3";
-            this.slot3.Size = new System.Drawing.Size(60, 50);
+            this.slot3.Size = new System.Drawing.Size(80, 60);
             this.slot3.TabIndex = 11;
             this.slot3.UseVisualStyleBackColor = true;
             this.slot3.Click += new System.EventHandler(this.slot3_Click);
+            // 
+            // PriceSlot1
+            // 
+            this.PriceSlot1.AutoSize = true;
+            this.PriceSlot1.Location = new System.Drawing.Point(153, 505);
+            this.PriceSlot1.Name = "PriceSlot1";
+            this.PriceSlot1.Size = new System.Drawing.Size(38, 15);
+            this.PriceSlot1.TabIndex = 12;
+            this.PriceSlot1.Text = "label2";
+            this.PriceSlot1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PriceSlot2
+            // 
+            this.PriceSlot2.AutoSize = true;
+            this.PriceSlot2.Location = new System.Drawing.Point(261, 505);
+            this.PriceSlot2.Name = "PriceSlot2";
+            this.PriceSlot2.Size = new System.Drawing.Size(38, 15);
+            this.PriceSlot2.TabIndex = 13;
+            this.PriceSlot2.Text = "label2";
+            this.PriceSlot2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PriceSlot2.Click += new System.EventHandler(this.PriceSlot2_Click);
+            // 
+            // PriceSlot3
+            // 
+            this.PriceSlot3.AutoSize = true;
+            this.PriceSlot3.Location = new System.Drawing.Point(364, 505);
+            this.PriceSlot3.Name = "PriceSlot3";
+            this.PriceSlot3.Size = new System.Drawing.Size(38, 15);
+            this.PriceSlot3.TabIndex = 14;
+            this.PriceSlot3.Text = "label3";
+            this.PriceSlot3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PriceSlot3.Click += new System.EventHandler(this.PriceSlot3_Click);
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 549);
+            this.Controls.Add(this.PriceSlot3);
+            this.Controls.Add(this.PriceSlot2);
+            this.Controls.Add(this.PriceSlot1);
             this.Controls.Add(this.slot3);
             this.Controls.Add(this.Slot2);
             this.Controls.Add(this.Slot1);
@@ -236,5 +274,8 @@
         private System.Windows.Forms.Button Slot1;
         private System.Windows.Forms.Button Slot2;
         private System.Windows.Forms.Button slot3;
+        private System.Windows.Forms.Label PriceSlot1;
+        private System.Windows.Forms.Label PriceSlot2;
+        private System.Windows.Forms.Label PriceSlot3;
     }
 }

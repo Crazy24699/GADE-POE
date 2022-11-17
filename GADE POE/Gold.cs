@@ -24,7 +24,7 @@ namespace GADE_POE
         //    Symbol = TileType.Gold;
         //}
 
-
+        //Random amount of gold that occurs when gold tiles spawn
         public Gold(int XPosition, int YPosition) : base(XPosition, YPosition)
         {
             GoldAmount = Rnd.Next(1, 6);
